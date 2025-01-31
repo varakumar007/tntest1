@@ -17,6 +17,11 @@ jobs:
         run: |
           npm install
           npm run build
+          
+      - name: Install PM2
+        run: |
+          npm install pm2 -g  # Install PM2 globally
+          echo "$HOME/.npm-global/bin" >> $GITHUB_PATH  # Update PATH for PM2
 
       - name: Deploy to EC2
         env:
