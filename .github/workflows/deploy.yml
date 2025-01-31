@@ -32,4 +32,4 @@ jobs:
           echo "$PRIVATE_KEY" > private_key.pem
           chmod 600 private_key.pem
           scp -o StrictHostKeyChecking=no -i private_key.pem -r build/* $USER@$HOST:/var/www/html/
-          ssh -o StrictHostKeyChecking=no -i private_key.pem $USER@$HOST 'pm2 restart all || pm2 start /var/www/html/index.js'
+    
